@@ -6,9 +6,18 @@ const BookingsList = props => {
 
   return (
     <li className="list-item">
-      <p className="name">{studentname}</p>
-      <p className="name">{mentorname}</p>
-      <p className="area-of-expertise">{duration}</p>
+      <p className="name">
+        <span>Student: </span>
+        {studentname}
+      </p>
+      <p className="name">
+        <span>Mentor: </span>
+        {mentorname}
+      </p>
+      <p className="duration">
+        <span>Duration: </span>
+        {duration} <span>min</span>
+      </p>
     </li>
   )
 }

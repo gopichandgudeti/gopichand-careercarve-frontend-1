@@ -13,6 +13,7 @@
 .bookings-container {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   width: 100%;
   background-color: rgb(245, 244, 244);
   padding: 20px;

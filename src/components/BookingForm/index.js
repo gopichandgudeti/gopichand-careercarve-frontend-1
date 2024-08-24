@@ -61,25 +61,29 @@ class BookingForm extends Component {
   getMentors = async () => {
     const url = 'https://gopichand-careercarve-backend.onrender.com/mentors'
     const response = await fetch(url)
-    const data = await response.json()
-    //console.log(data)
-    const fetchedData = data.map(eachMentor => ({
-      name: eachMentor.name,
-      areasOfExpertise: eachMentor.area_of_expertise,
-      isPremium: eachMentor.is_premium,
-      id: eachMentor.id,
-    }))
-    //console.log(fetchedData)
-    this.setState({mentorsList: fetchedData})
+    if (response.ok) {
+      const data = await response.json()
+      // console.log(data)
+      const fetchedData = data.map(eachMentor => ({
+        name: eachMentor.name,
+        areasOfExpertise: eachMentor.area_of_expertise,
+        isPremium: eachMentor.is_premium,
+        id: eachMentor.id,
+      }))
+      // console.log(fetchedData)
+      this.setState({mentorsList: fetchedData})
+    }
   }
 
   getBookings = async () => {
     const url = 'https://gopichand-careercarve-backend.onrender.com/bookings'
     const response = await fetch(url)
-    const data = await response.json()
-    const length = data.length
-    console.log(length)
-    this.setState({noOfBookings: length})
+    if (response.ok) {
+      const data = await response.json()
+      const {length} = data
+      console.log(length)
+      this.setState({noOfBookings: length})
+    }
   }
 
   onChangeStudentName = event => {
@@ -103,7 +107,7 @@ class BookingForm extends Component {
   onSelectMentor = (id, name) => {
     const {mentorsList} = this.state
     const selectedMentor = mentorsList.filter(each => each.id === id)
-    //console.log(selectedMentor)
+    // console.log(selectedMentor)
     if (selectedMentor[0].isPremium === 1) {
       this.setState({
         premiumMentorCost: 1000,
@@ -287,44 +291,54 @@ class BookingForm extends Component {
               )}
             </div>
 
-            <div className="popup-containe">
+            <div>
               <Popup
                 modal
                 trigger={
-                  <>
-                    <button type="submit" className="submit-btn">
-                      Submit
-                    </button>
-                    <button type="button">
-                      <Link to="/bookings">Bookings</Link>
-                    </button>
-                  </>
+                  <button type="button" className="submit-btn">
+                    Submit
+                  </button>
                 }
               >
                 {close => (
-                  <div className="popup-container">
-                    <div className="payment-container">
-                      <div className="purchase-detail-cont">
-                        <p>Mock Interview</p>
-                        <p>{durationCost}</p>
+                  <>
+                    <div className="popup--bg-container">
+                      <div className="popup-container">
+                        <div className="purchase-detail-cont">
+                          <p>Mock Interview</p>
+                          <p>{durationCost}</p>
+                        </div>
+
+                        <div className="purchase-detail-cont">
+                          <p>Premium</p>
+                          <p>{premiumMentorCost}</p>
+                        </div>
+
+                        <div className="purchase-detail-cont">
+                          <p className="grand-total-text">Grand Total</p>
+                          <p className="grand-total-text">
+                            {premiumMentorCost + durationCost}
+                          </p>
+                        </div>
+
+                        <div className="btns-container">
+                          <button
+                            type="button"
+                            className="close-btn"
+                            onClick={() => close()}
+                          >
+                            Checkout
+                          </button>
+
+                          <button type="button" className="bookings-btn">
+                            <Link to="/bookings" className="link-btn">
+                              Open Bookings
+                            </Link>
+                          </button>
+                        </div>
                       </div>
-                      <div className="purchase-detail-cont">
-                        <p>Premium charge</p>
-                        <p>{premiumMentorCost}</p>
-                      </div>
-                      <div className="purchase-detail-cont">
-                        <p className="grand-total-text">Grand total</p>
-                        <p>{premiumMentorCost + durationCost}</p>
-                      </div>
-                      <button
-                        type="button"
-                        className="trigger-button"
-                        onClick={() => close()}
-                      >
-                        Check Out
-                      </button>
                     </div>
-                  </div>
+                  </>
                 )}
               </Popup>
             </div>

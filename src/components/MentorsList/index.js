@@ -11,8 +11,14 @@ const MentorsList = props => {
     <li className="list-item">
       <button className="list-btn" onClick={onClickMentor}>
         {isPremium ? <p className="premium-text">Premium</p> : ''}
-        <p className="name">{name}</p>
-        <p className="area-of-expertise">{areasOfExpertise}</p>
+        <p className="name">
+          <span className="side-headings">Mentor: </span>
+          {name}
+        </p>
+        <p className="area-of-expertise">
+          <span className="side-headings">Area of expertise: </span>
+          {areasOfExpertise}
+        </p>
       </button>
     </li>
   )

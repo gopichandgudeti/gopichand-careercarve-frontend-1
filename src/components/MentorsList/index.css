@@ -6,37 +6,42 @@
   list-style-type: none;
   margin-right: 10px;
   margin-bottom: 10px;
-
+  height: 150px;
+  width: 300px;
   padding: 10px;
 }
 
 .list-btn {
   height: 100%;
   width: 100%;
-  padding: 0px;
   background-color: transparent;
   display: flex;
   flex-direction: column;
-  font-family: 'Roboto';
-  font-size: 12px;
-  line-height: 0px;
   align-items: flex-start;
+  justify-content: center;
   border: none;
   cursor: pointer;
+  padding: 5px;
 }
 
 .premium-text {
   font-family: 'Roboto';
-  font-size: 10px;
+  font-size: 15px;
   color: rgb(231, 216, 16);
+  margin-bottom: 0px;
 }
 
 .name {
   font-family: 'Roboto';
-  font-size: 12px;
+  font-size: 20px;
 }
 
 .area-of-expertise {
   font-family: 'Roboto';
-  font-size: 10px;
+  font-size: 15px;
+  margin-top: 0px;
+}
+
+.side-headings {
+  font-weight:800;
 }

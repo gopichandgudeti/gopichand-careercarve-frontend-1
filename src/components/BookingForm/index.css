@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  border: 1px solid;
+  flex-grow: 1;
 }
 
 .form-container {
@@ -29,7 +29,7 @@
 
 .icon {
   width: 250px;
-  height: 60px;
+  height: 40px;
 }
 
 .form-heading {
@@ -61,6 +61,7 @@
 .mentors-list-bg-cont {
   display: flex;
   flex-direction: row;
+  align-items: center;
   flex-wrap: wrap;
   width: 100%;
   padding-left: 0px;
@@ -68,7 +69,7 @@
 }
 
 .submit-btn {
-  background-color: rgb(0, 128, 255);
+  background-color: rgb(62, 143, 218);
   height: 30px;
   width: 80px;
   color: white;
@@ -76,6 +77,51 @@
   outline: none;
   cursor: pointer;
   border-radius: 5px;
+}
+
+.btns-container {
+  align-self: center;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.bookings-btn {
+  background-color: rgb(62, 143, 218);
+  height: 30px;
+  width: 50%;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.close-btn {
+  background-color: rgb(62, 143, 218);
+  height: 30px;
+  width: 50%;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.grand-total-text {
+  font-weight: bold;
+}
+
+.link-btn {
+  color: white;
+  text-decoration: none;
 }
 
 .error-msg {
@@ -96,6 +142,15 @@
 }
 
 .popup-container {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  width: 50%;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.popup--bg-container {
   background-color: rgba(0, 0, 0, 0.5);
   height: 100vh;
   width: 100vw;

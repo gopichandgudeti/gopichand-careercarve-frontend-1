@@ -15,15 +15,17 @@ class Bookings extends Component {
   getBookings = async () => {
     const url = 'https://gopichand-careercarve-backend.onrender.com/bookings'
     const response = await fetch(url)
-    const data = await response.json()
-    console.log(data)
-    const formattedData = data.map(each => ({
-      studentname: each.studentname,
-      mentorname: each.mentorname,
-      duration: each.duration,
-      id: each.id,
-    }))
-    this.setState({bookingsList: formattedData})
+    if (response.ok) {
+      const data = await response.json()
+      console.log(data)
+      const formattedData = data.map(each => ({
+        studentname: each.studentname,
+        mentorname: each.mentorname,
+        duration: each.duration,
+        id: each.id,
+      }))
+      this.setState({bookingsList: formattedData})
+    }
   }
 
   render() {
