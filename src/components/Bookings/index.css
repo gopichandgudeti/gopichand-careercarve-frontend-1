@@ -1,0 +1,28 @@
+.icon {
+  width: 250px;
+  height: 60px;
+}
+
+.app-bg-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.bookings-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgb(245, 244, 244);
+  padding: 20px;
+}
+
+.bookings-list-bg-cont {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-left: 0px;
+  margin-bottom: 0px;
+}

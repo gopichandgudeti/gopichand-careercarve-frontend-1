@@ -1,0 +1,42 @@
+.list-item {
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin-right: 10px;
+  margin-bottom: 10px;
+
+  padding: 10px;
+}
+
+.list-btn {
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto';
+  font-size: 12px;
+  line-height: 0px;
+  align-items: flex-start;
+  border: none;
+  cursor: pointer;
+}
+
+.premium-text {
+  font-family: 'Roboto';
+  font-size: 10px;
+  color: rgb(231, 216, 16);
+}
+
+.name {
+  font-family: 'Roboto';
+  font-size: 12px;
+}
+
+.area-of-expertise {
+  font-family: 'Roboto';
+  font-size: 10px;
+}

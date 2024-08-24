@@ -1,0 +1,30 @@
+.list-item {
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+}
+
+
+
+.premium-text {
+  font-family: 'Roboto';
+  font-size: 10px;
+  color: rgb(231, 216, 16);
+}
+
+.name {
+  font-family: 'Roboto';
+  font-size: 20px;
+}
+
+.area-of-expertise {
+  font-family: 'Roboto';
+  font-size: 15px;
+}
